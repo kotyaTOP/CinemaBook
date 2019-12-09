@@ -1,0 +1,16 @@
+<h1>Films</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Time</th>
+    <th></th>
+  </tr>
+
+  <% @films.each do |film| %>
+    <tr>
+      <td><%= film.name %></td>
+      <td><%= film.duration %></td>
+    </tr>
+  <% end %>
+</table>
