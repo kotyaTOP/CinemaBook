@@ -1,16 +1,79 @@
-<h1>Films</h1>
+<html>
+<head><link rel=stylesheet type=text/css href="file:///C:/Kate/Ruby%20on%20Rails/CinemaBook/app/views/styles.css">
+  <style>
+    h1 {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      display: table;
+      width: auto;
+      margin: 0 auto;
+      padding: 15px;
+      letter-spacing: 2px;
+      background: #cbdcea;
+      border: 2px dashed white;
+      color: white;
+      box-shadow: 0 0 0 4px #cbdcea;
+    }
 
-<table>
+    .table_col {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+      font-size: 14px;
+      width: 660px;
+      background: white;
+      text-align: left;
+      border-collapse: collapse;
+      color: #3E4347;
+      margin: auto;
+      border: 1px solid green;
+      margin-top: 20px;
+    }
+
+    .table_col th {
+      font-size: 20px;
+      font-weight: normal;
+      border-bottom: 2px solid #F5E1A6;
+      border-right: 20px solid white;
+      border-left: 20px solid white;
+      padding: 8px 10px;
+    }
+    .table_col td {
+      border-right: 20px solid white;
+      border-left: 20px solid white;
+      padding: 12px 10px;
+      color: #8b8e91;
+    }
+  </style>
+
+  <style>
+    @import url(/app/views/styles.css);
+  </style>
+
+</head>
+<div class="films"><h1>Сегодня в прокате</h1></div>
+<table class="table_col">
+
+  <!--<th>Название фильма</th> <th>Продолжительность</th>-->
   <tr>
-    <th>Name</th>
-    <th>Time</th>
-    <th></th>
+    <% @films.each do |film| %>
+      <th><%= film.name %></th>
+
+    <% end %>
+  </tr>
+  <tr>
+    <% @films.each do |film| %>
+      <td>Продолжительность: <%= film.duration %> мин</td>
+    <% end %></tr>
+  <tr>
+    <td>Время сеансов:</td>
+  </tr>
+  <tr>
+    <td>12:30</td>
+  </tr>
+  <tr>
+    <td>16:00</td>
+  </tr>
+  <tr>
+    <td>19:10</td>
   </tr>
 
-  <% @films.each do |film| %>
-    <tr>
-      <td><%= film.name %></td>
-      <td><%= film.duration %></td>
-    </tr>
-  <% end %>
 </table>
+</html>
