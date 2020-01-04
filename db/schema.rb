@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_173424) do
+ActiveRecord::Schema.define(version: 2020_01_04_103923) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "place_id", null: false
     t.integer "session_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["place_id"], name: "index_bookings_on_place_id"
+    t.integer "row"
+    t.integer "seat"
     t.index ["session_id"], name: "index_bookings_on_session_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2019_12_09_173424) do
     t.integer "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "producer"
+    t.string "actors"
+    t.datetime "year"
+    t.string "country"
+    t.integer "limit"
+    t.string "story"
   end
 
   create_table "halls", force: :cascade do |t|
@@ -75,7 +81,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_173424) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "bookings", "places"
   add_foreign_key "bookings", "sessions"
   add_foreign_key "bookings", "users"
   add_foreign_key "places", "halls"
