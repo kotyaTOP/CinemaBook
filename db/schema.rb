@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_04_103923) do
+ActiveRecord::Schema.define(version: 2020_01_04_121622) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_01_04_103923) do
     t.string "country"
     t.integer "limit"
     t.string "story"
+    t.string "genre"
   end
 
   create_table "halls", force: :cascade do |t|
